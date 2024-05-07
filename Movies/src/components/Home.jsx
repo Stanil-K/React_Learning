@@ -1,15 +1,16 @@
-import { Routes, Route } from 'react-router-dom'
+import Counter from "./Counter";
+import Timer from "./Timer";
 
-export default function Home() {
+export default function Home (){
 
-    return(
-        <>
-           <Routes>
-                <Route path="/" element={<Home />}/> 
-                <Route path="/about" element={<About />} />
-                <Route path='/timer' element={<Timer />} />
-                <Route path='/counter' element={<Counter />} />      
-           </Routes>
-    </>
-    );
+return(
+    <>
+        <h1>React Demo</h1>
+        <br/>
+        <Counter/>
+        <br/>
+        <Timer />
+    </> 
+);
+
 }

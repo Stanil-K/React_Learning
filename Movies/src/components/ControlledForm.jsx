@@ -1,86 +1,84 @@
-import { useState, useRef } from "react";
+import { useState} from "react";
 
-export default function ControlledForm({formRef}) {
 
+export default function ControlledForm() {
     // need to store the value of the input field in the state and need to initialize it with a default value
-    const [username, setUsername] = useState("John Doe");
-    const [password, setPassword] = useState("");
-    const [age, setAge] = useState(0);
-    const usernameInputRef = useRef();
+    const [usernameValue, setUsernameValue] = useState('');
+    const [passwordValue, setPasswordValue] = useState('');
+    const [ageValue, setAgeValue] = useState('');
 
+    const usernameChangeHandler = (e) => {
     // need to handle the change event of the input field
-    const onUsernameChange = (e) => {
-        setUsername(e.target.value);
-    }
+        setUsernameValue(e.target.value);
+    };
 
-    const onPasswordChange = (e) => {
-        setPassword(e.target.value);
-    }
+    const resetFormHandler = () => {
+        setUsernameValue('');
+        setPasswordValue('');
+        setAgeValue('');
+    };
 
-    const onAgeChange = (e) => {
-        setAge(e.target.value);
-    }
+    const passwordChangeHandler = (e) => {
+        setPasswordValue(e.target.value);
+    };
 
-    const onSubmitHandler = (e) => {
+    const ageChangeHandler = (e) => {
+        setAgeValue(Number(e.target.value));
+    };
+
+    const submitHandler = () => {
         // prevent the default behavior of the form if the button is of type submit
-        e.preventDefault();
-
-        console.log(username);
-        console.log(password);
-        console.log(age);
-
-        resetFromHandler();
-    }
-
-    const resetFromHandler = () => {
-        setUsername("");
-        setPassword("");
-        setAge(0);
-    }
-
+        console.log(usernameValue);
+        console.log(passwordValue);
+        console.log(ageValue);
+        resetFormHandler();
+    };
 
     return (
         <>
-        <h1>Controlled Form</h1>
-        <form ref={formRef}>
-            <div>
-                <label htmlFor="username">Username</label>
-                <input 
-                    ref={usernameInputRef}
-                    type="text" 
-                    name="username"
-                    id="username"
-                    // passing value and onChange props makes the input controlled
-                    value={username}
-                    onChange={onUsernameChange}
-                />
-            </div>  
-            <div>
-                <label htmlFor="password">Password</label>
-                <input 
-                    type="password" 
-                    name="password" 
-                    id="password" 
-                    // passing value and onChange props makes the input controlled
-                    value={password}
-                    onChange={onPasswordChange}
-                />
-            </div> 
-            <div>
-                <label htmlFor="age">Age</label>
-                <input 
-                    type="number" 
-                    name="age" 
-                    id="age" 
-                    // passing value and onChange props makes the input controlled
-                    value={age}
-                    onChange={onAgeChange}
-                />
-            </div> 
-            {/* <button type="submit" onClick={onSubmitHandler}>Register</button>  -  if button is of type submit, the default behaviour needs to be prevented in the onSubmitHandler function*/}
-            <button type="submit" onClick={onSubmitHandler}>Register</button>            
-            <button type="button" onClick={resetFromHandler}>Reset</button>            
-        </form>
+            <h1>Controlled Form</h1>
+
+            <form>
+                <div>
+                    <label htmlFor="username">Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        id="username"
+                        // passing value and onChange props makes the input controlled
+                        value={usernameValue}
+                        onChange={usernameChangeHandler}
+                        onBlur={() => console.log('onBlur')}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="password">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        // passing value and onChange props makes the input controlled
+                        value={passwordValue}
+                        onChange={passwordChangeHandler}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="age">Age</label>
+                    <input
+                        type="number"
+                        name="age"
+                        id="age"
+                        // passing value and onChange props makes the input controlled
+                        value={ageValue}
+                        onChange={ageChangeHandler}
+                    />
+                </div>
+                <div>
+                    {/* <button type="submit" onClick={onSubmitHandler}>Register</button>  -  if button is of type submit, the default behaviour needs to be prevented in the onSubmitHandler function*/}
+                    <button type="button" onClick={submitHandler}>Register</button>
+                    <button type="button" onClick={resetFormHandler}>Reset</button>
+                </div>
+            </form>
         </>
     );
 }

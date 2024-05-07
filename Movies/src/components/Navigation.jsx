@@ -1,13 +1,12 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Navigation() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand as={Link} to="/">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -17,8 +16,10 @@ function Navigation() {
             <Nav.Link as={Link} to="/movies">Movies</Nav.Link>
             <Nav.Link as={Link} to="/swapiCharacters">SWAPI Characters</Nav.Link>
             <Nav.Link as={Link} to="/uncontrolledForm">Uncontrolled Form</Nav.Link>
-            {/* <Nav.Link as={Link} to="/controlledForm">Controlled Form</Nav.Link> */}
+            <Nav.Link as={Link} to="/controlledForm">Controlled Form</Nav.Link>
             <Nav.Link as={Link} to="/controlledFormImproved">Improved Controlled Form</Nav.Link>
+            <Nav.Link as={Link} to="/about">About</Nav.Link>
+            <Nav.Link as={Link} to="/contacts">Contacts</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
