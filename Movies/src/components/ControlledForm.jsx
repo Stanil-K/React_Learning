@@ -45,7 +45,7 @@ export default function ControlledForm() {
                         type="text"
                         name="username"
                         id="username"
-                        // passing value and onChange props makes the input controlled
+                        // passing "value" and "onChange" props makes the input controlled
                         value={usernameValue}
                         onChange={usernameChangeHandler}
                         onBlur={() => console.log('onBlur')}

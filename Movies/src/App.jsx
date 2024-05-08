@@ -16,7 +16,9 @@ import HomeToDo from './components/HomeToDo'
 import ControlledFormImproved from './components/ControlledFormImproved'
 
 function App() {
-
+  // run React from Movies folder with the command: npm run dev
+  // the server folder contains the server.js file that runs the server with the command: node server.js
+  // when starting the server, it will be empty, any type of data can be added to it with the help of Postman or the UI, but for the purpose of the project ToDo items are required
   return (
     <>
             <Navigation />
