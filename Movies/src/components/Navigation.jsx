@@ -20,6 +20,7 @@ function Navigation() {
             <Nav.Link as={Link} to="/controlledFormImproved">Improved Controlled Form</Nav.Link>
             <Nav.Link as={Link} to="/about">About</Nav.Link>
             <Nav.Link as={Link} to="/contacts">Contacts</Nav.Link>
+            <Nav.Link as={Link} to="/homeToDo">To Do List</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

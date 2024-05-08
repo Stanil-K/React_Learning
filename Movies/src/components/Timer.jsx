@@ -22,6 +22,8 @@ return (
             <p>Time elapsed: {time}</p>
         </div>
 
+        
+         {/* Outlet represents the place where the nested routes will be rendered, the nested routes are in App.jsx in this case  */}
         <Outlet />
     </> 
 ); 

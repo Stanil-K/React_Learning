@@ -1,16 +1,9 @@
-import Counter from "./Counter";
-import Timer from "./Timer";
-
 export default function Home (){
 
 return(
-    <>
-        <h1>React Demo</h1>
-        <br/>
-        <Counter/>
-        <br/>
-        <Timer />
-    </> 
+   <>
+         <h1>React Demo</h1>
+         <h1>Home Page</h1>
+   </>
 );
-
 }

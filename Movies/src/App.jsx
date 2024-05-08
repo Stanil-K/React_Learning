@@ -12,11 +12,10 @@ import Home from "./components/Home";
 import Contacts from "./components/Contacts";
 import UncontrolledForm from './components/UncontrolledForm'
 import ControlledForm from './components/ControlledForm'
+import HomeToDo from './components/HomeToDo'
 import ControlledFormImproved from './components/ControlledFormImproved'
 
-
 function App() {
-
 
   return (
     <>
@@ -40,6 +39,7 @@ function App() {
               <Route path='/controlledFormImproved' element={<ControlledFormImproved />} />
               <Route path='/about' element={<About />} />
               <Route path='/contacts' element={<Contacts />} />
+              <Route path='/homeToDo' element={<HomeToDo />} />
             </Routes>
 
     </>
